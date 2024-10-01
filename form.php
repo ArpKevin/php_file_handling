@@ -32,9 +32,32 @@ while(!feof($myfile)) {
 print("</table>");
 
 fclose($myfile);
-
 ?>
 
+<?php
+$unit = isset($_POST["unit"]) ? $_POST["unit"] : 0;
+$name = isset($_POST["name"]) ? $_POST["name"] : "";
+$price = isset($_POST["price"]) ? $_POST["price"] : 0;
+$bool = isset($_POST["bool"]) ? $_POST["bool"] : "";
+
+$muvelet = isset($_POST["muvelet"]) ? $_POST["muvelet"] : null;
+?>
+
+<form action="form.php" method="POST">
+    <label for="unit">Egység:</label>
+    <input type="text" name="unit" id="unit" autocomplete="off"> <br>
+
+    <label for="name">Név:</label>
+    <input type="text" name="name" id="name"> <br>
+
+    <label for="price">Ár:</label>
+    <input type="number" name="price" id="price" min="1"> <br>
+
+    <label for="bool">Boolean:</label>
+    <input type="number" name="bool" id="bool"> <br>
+
+    <button name="muvelet">Hozzáad</button>
+</form>
 
 </body>
 </html>
